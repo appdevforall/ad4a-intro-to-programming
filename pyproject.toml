@@ -1,0 +1,72 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ad4a-intro-to-programming"
+version = "0.1.0"
+description = "Introductory Java programming course for Android."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Mark Rose", email = "markrose@acm.org" }]
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Education",
+  "Topic :: Software Development",
+  "Programming Language :: Python :: 3",
+]
+
+dependencies = [
+    "mdit-py-plugins",
+    "markdown-it-py[linkify,plugins]==3.0.0",
+    "markdown-pdf",
+    "mkdocs",
+#    "mkdocs-material",
+    "mermaid-cli",
+    # After build must install Chromium: playright install chromium
+    # See: https://github.com/seigok/mermaid-cli-python
+    # Use a Hatch post-install-commands definition for the environment
+]
+
+[project.urls]
+"Homepage" = "https://github.com/merose/ad4a-intro-to-programming"
+"Bug Reports" = "https://github.com/merose/ad4a-intro-to-programming/issues"
+"Source" = "https://github.com/merose/ad4a-intro-to-programming.git"
+
+[project.scripts]
+genpdf = "ad4a.util.genpdf:main"
+
+[tool.hatch.build]
+reproducible = false
+
+[tool.hatch.build.targets.sdist]
+ignore-vcs = true
+exclude = [
+    "__pycache__",
+    "*.py[codz]",
+    "*$py.class",
+    ".so",
+    "/build",
+    "/dist",
+    "/hooks",
+    "htmlcov",
+    "/config.json",
+    "/.venv",
+    "*~",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/ad4a",
+]
+
+[tool.hatch.envs.course]
+post-install-commands = [
+    "playwright install chromium"
+]
+
+[tool.hatch.envs.course.scripts]
+pdf = ["genpdf mkdocs.yml dist/intro-to-programming.pdf"]
+html = ["mkdocs build --no-directory-urls"]
+serve = ["mkdocs serve --watch docs --open"]

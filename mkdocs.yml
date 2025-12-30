@@ -1,0 +1,12 @@
+site_name: Introduction to Programming with Java
+markdown_extensions:
+  - footnotes
+  - tables
+  - abbr
+theme: readthedocs
+nav:
+- Introduction: README.md
+- Introducing Code on the Go: intro-to-cotg.md
+- Java concepts: java-concepts.md
+- First console program: console-program.md
+- Answers: answers.md
