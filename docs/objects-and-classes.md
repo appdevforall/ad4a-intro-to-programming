@@ -87,6 +87,8 @@ jshell>
 
 `Instant` is not available, but we can _import_ it like this, and try again.
 
+**NOTE:** Missing section, adding classpath, then importing.
+
 ```Java
 jshell> import java.time.Instant
 
