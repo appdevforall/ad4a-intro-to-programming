@@ -315,6 +315,10 @@ The definition of the other method is a little different.
     call `getGreeting` to get `"Hello World!"`, and then pass that to
     `println` to print the message on the console.
 
+## Further reading
+
+- Gradle manual, [Part 1: Initializing the Project](https://docs.gradle.org/current/userguide/part1_gradle_init.html)
+
 ## Exercises
 
 1. Change the greeting shown by the `App` program to be

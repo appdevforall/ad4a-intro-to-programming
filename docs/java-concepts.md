@@ -293,7 +293,8 @@ Stop `jshell` by typing the command `/exit`. Then, at the shell `$` prompt type 
 
 ## Further reading
 
-Read chapters 1 and 2 in _Think Java_.
+- Read chapters 1 and 2 in _Think Java_.
+- [Java Shell User's Guide](https://docs.oracle.com/en/java/javase/21/jshell/index.html)
 
 ## Exercises
 
