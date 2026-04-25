@@ -1,6 +1,6 @@
 # App Dev for All: Intro to Java Programming
 App Dev for All's introductory course in Java programming for Android. This repository
-is the source for the course, in Markdown format. It can be generated
+contains the source materials for the course, in Markdown format. It can be generated
 into a PDF or HTML pages using scripts.
 
 ## Setup
